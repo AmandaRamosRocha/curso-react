@@ -1,4 +1,5 @@
 import React from "react";
+import "./Tarefa.css";
 export default function Tarefa({tarefa}){
-    return <h1>{tarefa.title}</h1>
+    return <div className="tarefa-container">{tarefa.title}</div>;
 }
