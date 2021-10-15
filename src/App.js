@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "./App.css";
+import AddTarefa from "./componentes/AddTarefa";
 import Tarefas from "./componentes/Tarefas";
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
   ]);
   return(
     <div className="container">
+      <AddTarefa/>
       <Tarefas tarefas={tarefas}/> 
     </div>
   );
