@@ -4,7 +4,7 @@ import AddTarefa from "./componentes/AddTarefa";
 import Tarefas from "./componentes/Tarefas";
 
 export default function App() {
-  const[tarefas, setTarefas] = useState([
+  const[tasks, setTasks] = useState([
     { 
       id: "1",
       title: "Estudar Programação",
@@ -16,12 +16,20 @@ export default function App() {
       completed: true,
     },
   ]);
-  return(
-    <div className="container">
-      <AddTarefa/>
-      <Tarefas tarefas={tarefas}/> 
-    </div>
-  );
+function handleTaskAddition(taskTitle) {
+  const newTasks = [...tasks, {
+    title: taskTitle,
+    id: Math.randon(10),
+    completed: false,
+  },
+];
+    setTasks(newTasks);
 }
 
-
+  return(
+    <div className="container">
+      <AddTarefa handleTaskAddition={handleTaskAddition}/>
+      <Tarefas tasks={tasks}/> 
+    </div>
+  );
+};

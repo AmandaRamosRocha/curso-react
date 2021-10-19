@@ -1,11 +1,11 @@
 import React from "react";
 import Tarefa from "./Tarefa"
 
-export default function Tarefas({tarefas}) {
-    console.log(tarefas);
+export default function Tarefas({tasks}) {
+    console.log(tasks);
     return(
-        <>
-            {tarefas.map( tarefa => <Tarefa tarefa={tarefa} />)}  
-        </>
+        <div>
+            {tasks.map((task) => (<Tarefa task={task} />))}
+        </div> 
     )
 };
