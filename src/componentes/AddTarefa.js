@@ -9,8 +9,9 @@ export default function AddTarefa({handleTaskAddition}){
         setInputData(e.target.value);
     };
 
-    function handleTaskClick(){
+    function handleTaskAddClick(){
         handleTaskAddition(inputData);
+        setInputData("");
     }
 
     return(
@@ -20,7 +21,7 @@ export default function AddTarefa({handleTaskAddition}){
                 className="add-tarefa-input"
                 type="text"/>;
             <div className="add-button-container">
-            <Button onClick={handleTaskClick}>Adicionar</Button>
+            <Button onClick={handleTaskAddClick}>Adicionar</Button>
             </div> 
         </div>
     );
