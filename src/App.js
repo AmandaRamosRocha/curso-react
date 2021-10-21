@@ -34,15 +34,20 @@ export default function App() {
   },
   ];
     setTasks(newTasks);
-  }
+  };
 
   function handleTaskDeletion(taskId){ 
+    const newTasks = tasks.filter((task) => task.id !== taskId);
+    setTasks(newTasks);
+  };
 
-  }
   return(
     <div className="container">
+      <h1 style={{color: "#eee"}}>Minhas Tarefas</h1>
       <AddTarefa handleTaskAddition={handleTaskAddition}/>
-      <Tarefas tasks={tasks} handleTaskClick={handleTaskClick}/> 
+      <Tarefas tasks={tasks} 
+      handleTaskClick={handleTaskClick} 
+      handleTaskDeletion={handleTaskDeletion}/> 
     </div>
   );
 };
